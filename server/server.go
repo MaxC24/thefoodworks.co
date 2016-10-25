@@ -3,44 +3,30 @@ package main
 
 import (
 	// Standard library packages
-	"encoding/json"
-	"fmt"
+
 	"net/http"
+
+	"gopkg.in/mgo.v2"
 	// Third party packages
-	"github.com/Nav31/Food.Now/Models"
+
+	"github.com/Nav31/Food.Now/controllers"
 	"github.com/julienschmidt/httprouter"
 )
 
+func getSession() *mgo.Session {
+	// connecting to database
+	session, err := mgo.Dial("127.0.0.1")
+	if err != nil {
+		panic(err)
+	}
+	return session
+}
+
 func main() {
 	router := httprouter.New()
-	// Get req
-	router.GET("/user/:id", func(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
-		// Made a test User
-		user := models.User{
-			Name:     "Sergy Brin",
-			Email:    "sergy@google.com",
-			Password: "hello_world",
-			Location: "Menlo Park, CA",
-			ID:       p.ByName("id"),
-		}
-		uj, _ := json.Marshal(user)
-		w.Header().Set("Content-Type", "application/json")
-		w.WriteHeader(200)
-		fmt.Fprintf(w, "%s", uj)
-	})
-	// Post req
-	router.POST("/user", func(w http.ResponseWriter, req *http.Request, p httprouter.Params) {
-		user := models.User{}
-		json.NewDecoder(req.Body).Decode(&user)
-		user.ID = "yello"
-		uj, _ := json.Marshal(user)
-		w.Header().Set("Content-Type", "application/json")
-		w.WriteHeader(201)
-		fmt.Fprintf(w, "%s", uj)
-	})
-	// Delete req
-	router.DELETE("/user/:id", func(w http.ResponseWriter, req *http.Request, p httprouter.Params) {
-		w.WriteHeader(200)
-	})
+	userCtrl := controllers.NewUserController()
+	router.GET("/user/:id", userCtrl.GetUser)
+	router.POST("/user", userCtrl.CreateUser)
+	router.DELETE("/user/:id", userCtrl.RemoveUser)
 	http.ListenAndServe("localhost:3000", router)
 }
