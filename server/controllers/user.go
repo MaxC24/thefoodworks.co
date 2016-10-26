@@ -7,26 +7,34 @@ import (
 
 	"github.com/Nav31/Food.Now/Models"
 	"github.com/julienschmidt/httprouter"
+	"gopkg.in/mgo.v2"
+	"gopkg.in/mgo.v2/bson"
 )
 
 type (
 	// UserController represents the controller for operating on the User resource
-	UserController struct{}
+	UserController struct {
+		session *mgo.Session
+	}
 )
 
-func NewUserController() *UserController {
-	return &UserController{}
+func NewUserController(s *mgo.Session) *UserController {
+	return &UserController{s}
 }
 
-// GetUser retrieves an individual user resource
+// GetUser gets a particular user
 func (uc UserController) GetUser(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
-	// Stub an example user
-	user := models.User{
-		Name:     "Sergy Brin",
-		Email:    "sergy@google.com",
-		Password: "hello_world",
-		Location: "Menlo Park, CA",
-		ID:       p.ByName("id"),
+	id := p.ByName("id")
+	// if !bson.IsObjectIdHex(id) {
+	// 	w.WriteHeader(404)
+	// 	return
+	// }
+	oid := bson.ObjectIdHex(id)
+	user := models.User{}
+	fmt.Println(oid)
+	if err := uc.session.DB("Food_Now").C("users").FindId(oid).One(&user); err != nil {
+		w.WriteHeader(404)
+		return
 	}
 	uj, _ := json.Marshal(user)
 	w.Header().Set("Content-Type", "application/json")
@@ -34,12 +42,12 @@ func (uc UserController) GetUser(w http.ResponseWriter, r *http.Request, p httpr
 	fmt.Fprintf(w, "%s", uj)
 }
 
-// CreateUser creates a new user resource
+// CreateUser makes a user
 func (uc UserController) CreateUser(w http.ResponseWriter, req *http.Request, p httprouter.Params) {
-	// Stub an user to be populated from the body
 	user := models.User{}
 	json.NewDecoder(req.Body).Decode(&user)
-	user.ID = "yello"
+	user.Id = bson.NewObjectId()
+	uc.session.DB("Food_Now").C("users").Insert(user)
 	uj, _ := json.Marshal(user)
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(201)

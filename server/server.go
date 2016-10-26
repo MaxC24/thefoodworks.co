@@ -14,8 +14,8 @@ import (
 )
 
 func getSession() *mgo.Session {
-	// connecting to database
-	session, err := mgo.Dial("127.0.0.1")
+	// connect to mongoDB
+	session, err := mgo.Dial("mongodb://localhost")
 	if err != nil {
 		panic(err)
 	}
@@ -24,7 +24,7 @@ func getSession() *mgo.Session {
 
 func main() {
 	router := httprouter.New()
-	userCtrl := controllers.NewUserController()
+	userCtrl := controllers.NewUserController(getSession())
 	router.GET("/user/:id", userCtrl.GetUser)
 	router.POST("/user", userCtrl.CreateUser)
 	router.DELETE("/user/:id", userCtrl.RemoveUser)
