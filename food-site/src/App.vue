@@ -16,6 +16,7 @@
       <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
     </ul>
+    <router-link to="name">App in the App</router-link>
   </div>
 </template>
 
@@ -31,6 +32,12 @@ export default {
 </script>
 
 <style>
+
+body {
+  padding: 0%;
+  margin: 0%;
+}
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
