@@ -3,9 +3,14 @@
   <head>
     <meta charset="utf-8">
     <title>foodworks</title>
+    <script src="/dist/build.js" defer></script>
   </head>
   <body>
-    <div id="app"></div>
-    <script src="/dist/build.js"></script>
+    <div id="app">
+    	<h1>Hello App</h1>
+    	<router-link to="/mass">Mass</router-link>
+    	<router-link to="/">Home</router-link>
+    	<router-view></router-view>
+    </div>
   </body>
 </html>
