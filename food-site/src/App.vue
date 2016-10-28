@@ -33,6 +33,10 @@ export default {
 
 <style>
 
+*{
+  box-sizing: border-box;
+}
+
 body {
   padding: 0%;
   margin: 0%;
