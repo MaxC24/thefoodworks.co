@@ -37,11 +37,15 @@
 	  text-align: center;
 	  color: #2c3e50;
 	}
+	body {
+		margin: 0;
+	}
 	#hero-img {
 		width: 100vw;
 		height: 65vw;
 		background-image: url('./assets/hero.jpg');
 		background-size: 100%;
+		margin-bottom: 2vw;
 	}
 	button:focus {
 		outline:none;
