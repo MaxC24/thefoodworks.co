@@ -27,15 +27,40 @@
 
 
 <style>
+	*{
+	  box-sizing: border-box;
+	}
+	#app {
+	  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+	  -webkit-font-smoothing: antialiased;
+	  -moz-osx-font-smoothing: grayscale;
+	  text-align: center;
+	  color: #2c3e50;
+	}
 	#hero-img {
 		width: 100vw;
 		height: 65vw;
 		background-image: url('./assets/hero.jpg');
 		background-size: 100%;
 	}
+	button:focus {
+		outline:none;
+	}
 	.btn {
+		color: white;
+		background-color: rgba(0, 0, 0, 0);
 		float: right;
-		margin: 5px;
+		margin: 10px;
+		border: 3px solid white;
+		border-radius: 5px;
+		width: 10vw;
+		height: 3vw;
+		font-size: 1.5vw
+	}
+	.btn:hover {
+		color:black;
+		background-color: white;
+		border: none;
 	}
 	.par {
 		width: 100vw;
@@ -45,6 +70,7 @@
 		width: 50vw;
 		padding:5%;
 		display: inline-block;
+		font-size: 2vw;
 	}
 	.par .img {
 		width:	40%;
@@ -52,6 +78,7 @@
 		background-size: 100%;
 	}
 	.par .img img {
-		width: 50%;
+		width: 30vw;
+		padding-bottom: 10vw;
 	}
 </style>
