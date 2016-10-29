@@ -25,6 +25,7 @@ func getSession() *mgo.Session {
 func main() {
 	router := httprouter.New()
 	userCtrl := controllers.NewUserController(getSession())
+	// users
 	router.GET("/user/:id", userCtrl.GetUser)
 	router.POST("/user", userCtrl.CreateUser)
 	router.DELETE("/user/:id", userCtrl.RemoveUser)
