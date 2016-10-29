@@ -7,7 +7,7 @@
  -->		</div>
 		<div class="par">
 			<p>
-				One of the greatest problems of our modern times is: <br/><strong>The paradox of choices</strong><br/>
+				One of the greatest problems of our modern times is: <strong>The Paradox Of Choices</strong>.
 				If you have ever ordered delivery food you know how difficult it is to choose from the multitude of options available. Restaurants menus are way too long and it's very hard to know how the food is going to look like or whether is going to be any good.
 				The advent of Grubhub and Seamless made the food delivery option faster and more accessible, but, because of the added choices and long menus to scroll through, the research for the optimal dish became harder and time consuming.
 			</p>
@@ -17,6 +17,7 @@
 			<div class="img" id="mobimg-one" ><img src="http://www.siriuscom.com/wp-content/uploads/2014/11/Solutions.jpg" /></div>
 			<p>
 				With our product we solve the problem of investing too much time looking for the best option by making the experience more engaging , interactive and especially more social. The user will be able to explore more choices at a faster pace, and at the same time reducing "the stress" and "fear of the unknown" related to choosing a dish never ordered before.
+				We cannot completely eliminate <strong>The Paradox Of Choices</strong> but at least we can make it less disrupting in our everyday life.
 			<!-- 	Shortly we are planning to showcase a demo of our application, so t
 				We are doing this by showing you a stream of pictures of dishes that people have ordered nearby. You will be able to click on the image and see the details of the dish and if you like it, you will be able to order it.  We believe that by showing you the dish, you will not have to look through endless menus of restaurants.  Furthermore, with a service like Yelp, the resturant gets a good grade if a single dish there was good.  But with this service, the dish or a particular resturant gets a rating.  This will make sure the resturant is not over glorified for a particular dish. -->
 			</p>
