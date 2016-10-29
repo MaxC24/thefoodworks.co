@@ -21,7 +21,7 @@
 		background-size: 100%;
 		margin-top: 3vw;
 	}
-	@media (min-width: 1800px) {
+	@media (min-width: 1500px) {
 		#footer {
 			display: inline-block;
 			width: 90vw;

@@ -130,7 +130,7 @@
 		}
 	}
 
-	@media (min-width: 1800px) {
+	@media (min-width: 1500px) {
 		#hero-img {
 			display: inline-block;
 			width: 90vw;
