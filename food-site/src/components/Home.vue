@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div id="container">
 	<div>
 		<div id="hero-img">
 			<!-- <button class="btn">Blog</button>
@@ -7,21 +7,20 @@
  -->		</div>
 		<div class="par">
 			<p>
-				We live in a world of too many choices.
-				Making a decision about the food you would like to order
-				becomes a difficult decision with all the choices avaiable.  
-				The menus for resturants are all very long with too many decisions to make.  You might have some doubts, you don't know what the food is going to look like. The advent of Grubhub and Seamless make getting to these resturant menus easier online, but the added choices make finding the perfect dish even harder.  
-				After not being able to make a decision after a while, you start to eat your "goto" dish for your meal.  However, there could be many great dishes around you that are being ordered.  
+				One of the greatest problems of our modern times is: <br/><strong>The paradox of choices</strong><br/>
+				If you have ever ordered delivery food you know how difficult it is to choose from the multitude of options available. Restaurants menus are way too long and it's very hard to know how the food is going to look like or whether is going to be any good.
+				The advent of Grubhub and Seamless made the food delivery option faster and more accessible, but, because of the added choices and long menus to scroll through, the research for the optimal dish became harder and time consuming.
 			</p>
 			<div class="img"><img src="http://tamaramccleary.com/wp-content/uploads/2015/01/choices.jpg" /></div>
 		</div>
 		<div class="par">
-			<div class="img" id="mobimg-one" ><img src="../assets/hero.jpg" /></div>
+			<div class="img" id="mobimg-one" ><img src="http://www.siriuscom.com/wp-content/uploads/2014/11/Solutions.jpg" /></div>
 			<p>
-				We are solving the problem of find the right dish for your meal.  
-				We are doing this by showing you a stream of pictures of dishes that people have ordered nearby. You will be able to click on the image and see the details of the dish and if you like it, you will be able to order it.  We believe that by showing you the dish, you will not have to look through endless menus of resturants.  Furthermore, with a service like Yelp, the resturant gets a good grade if a single dish there was good.  But with this service, the dish or a particular resturant gets a rating.  This will make sure the resturant is not over glorified for a particular dish.
+				With our product we solve the problem of investing too much time looking for the best option by making the experience more engaging , interactive and especially more social. The user will be able to explore more choices at a faster pace, and at the same time reducing "the stress" and "fear of the unknown" related to choosing a never ordered before dish.
+			<!-- 	Shortly we are planning to showcase a demo of our application, so t
+				We are doing this by showing you a stream of pictures of dishes that people have ordered nearby. You will be able to click on the image and see the details of the dish and if you like it, you will be able to order it.  We believe that by showing you the dish, you will not have to look through endless menus of restaurants.  Furthermore, with a service like Yelp, the resturant gets a good grade if a single dish there was good.  But with this service, the dish or a particular resturant gets a rating.  This will make sure the resturant is not over glorified for a particular dish. -->
 			</p>
-			<div class="img" id="mobimg-two"><img src="../assets/hero.jpg" /></div>
+			<div class="img" id="mobimg-two"><img src="http://www.siriuscom.com/wp-content/uploads/2014/11/Solutions.jpg" /></div>
 		</div>
 	</div>
 	<Footer />
@@ -43,6 +42,9 @@
 	*{
 	  box-sizing: border-box;
 	}
+	#container {
+		margin-bottom: 0;
+	}
 	#app {
 	  font-family: 'Avenir', Helvetica, Arial, sans-serif;
 	  -webkit-font-smoothing: antialiased;
@@ -51,7 +53,7 @@
 	  color: #2c3e50;
 	}
 	body {
-		margin: 0;
+		margin: 0%;
 	}
 	#hero-img {
 		width: 100vw;
@@ -96,11 +98,16 @@
 	}
 	.par .img img {
 		width: 30vw;
-		padding-bottom: 5vw;
+		padding-bottom: 3vw;
 	}
 
 	#mobimg-two {
 		display: none;
+	}
+
+	#mobimg-one img{
+		width: 20vw;
+		padding-bottom: 0vw;
 	}
 	
 	@media (max-width: 620px) {
@@ -122,7 +129,12 @@
 		}
 	}
 
-	@media (min-width: 1500px) {
+	@media (min-width: 1800px) {
+		#hero-img {
+			display: inline-block;
+			width: 90vw;
+			height: 60vw;
+		}
 		.par p {
 			font-size: 1.2vw;
 			width: 40vw;
@@ -132,7 +144,10 @@
 		}
 		.par .img img {
 			width: 30vw;
-			padding-bottom: 3vw;
+			padding-bottom: 0vw;
+		}
+		#mobimg-one img {
+			width: 20vw;
 		}
 	}
 </style>
