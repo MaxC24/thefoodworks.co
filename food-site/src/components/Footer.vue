@@ -1,12 +1,12 @@
 <template>
-	<div id="footer">
+	<div id="ftr">
 	<a href="mailto:massimo.crapanzano@gmail.com"><button class="btn btn-ft">contact</button></a>
 	</div>
 </template>
 
 <script>
 	export default {
-		// name: footer
+		// name: ftr
 	}
 </script>
 
@@ -14,7 +14,7 @@
 	.btn-ft {
 		margin:6vw 2vw 0vw 0vw;
 	}
-	#footer {
+	#ftr {
 		height: 10vw;
 		background-image: url('../assets/hero.jpg');
 		background-position: 0px 15vw;
@@ -22,7 +22,7 @@
 		margin-top: 3vw;
 	}
 	@media (min-width: 1500px) {
-		#footer {
+		#ftr {
 			display: inline-block;
 			width: 90vw;
 			vertical-align: top;

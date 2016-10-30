@@ -24,16 +24,16 @@
 			<div class="img" id="mobimg-two"><img src="http://www.siriuscom.com/wp-content/uploads/2014/11/Solutions.jpg" /></div>
 		</div>
 	</div>
-	<Footer />
+	<foot />
 	</div>
 </template>
 
 <script>
-	import Footer from './Footer.vue'
+	import foot from './Footer.vue'
 	export default {
 		// name: 'home'g
 		components: {
-			Footer
+			foot
 		}
 	}
 </script>
