@@ -20,16 +20,17 @@
 		background-position: 0px 15vw;
 		background-size: 100%;
 		margin-top: 3vw;
-	}
-	@media (min-width: 1500px) {
-		#ftr {
-			display: inline-block;
-			width: 90vw;
-			vertical-align: top;
-		} 
+		display: inline-block;
+		width: 90vw;
+		vertical-align: top;
 	}
 
 	@media (max-width: 720px) {
+
+		#ftr {
+			display: block;
+			width: 100vw;
+		} 
 		.btn-ft {
 			font-size: 3vw;
 			width: 30vw;
